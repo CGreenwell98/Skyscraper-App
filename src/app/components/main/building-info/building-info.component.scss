@@ -1,5 +1,5 @@
 .building-container {
-  min-width: 600px;
+  width: 800px;
   min-height: 500px;
   padding: 30px;
   margin: 30px;
@@ -18,5 +18,32 @@
 .info-container {
   display: flex;
   flex-direction: column;
-  padding: 15px;
+  padding: 20px;
+
+  ul {
+    list-style: none;
+    display: grid;
+    font-size: small;
+    color: #303030;
+    margin-top: 20px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+
+    li {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin: 5px 10px;
+    }
+  }
+
+  h3 {
+    margin-top: 30px;
+    color: #181818;
+  }
+
+  p {
+    margin: 5px 10px;
+    font-size: 0.85em;
+    color: #202020;
+  }
 }

@@ -14,7 +14,7 @@ export class BuildingInfoComponent implements OnInit {
 
   ngOnInit(): void {
     this.building = this.buildingService
-      .getBuildings()
-      .subscribe((buildings: Building[]) => (this.building = buildings[6]));
+      .getBuilding(3)
+      .subscribe((building: Building) => (this.building = building));
   }
 }

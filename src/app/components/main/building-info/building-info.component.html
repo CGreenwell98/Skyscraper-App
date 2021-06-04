@@ -3,11 +3,15 @@
   <div class="info-container">
     <h1>{{ building.name }}</h1>
 
-    {{ building.height }}
-    {{ building.floors }}
-    {{ building.primaryuse }}
-    {{ building.yearbuilt }}
-    {{ building.location }}
-    {{ building.notes }}
+    <ul>
+      <li><strong>Height:</strong>{{ building.height }}m</li>
+      <li><strong>Floors:</strong>{{ building.floors }}</li>
+      <li><Strong>Primary Use:</Strong>{{ building.primaryuse }}</li>
+      <li><Strong>Year Built:</Strong>{{ building.yearbuilt }}</li>
+      <li><Strong>Location:</Strong>{{ building.location }}</li>
+    </ul>
+
+    <h3>Description:</h3>
+    <p>{{ building.description }}</p>
   </div>
 </div>
