@@ -1,0 +1,8 @@
+<div class="sidebar">
+  <input type="text" placeholder="Search Building" />
+  <ul *ngIf="buildingList">
+    <li *ngFor="let building of buildingList | async">
+      {{ building.name }}
+    </li>
+  </ul>
+</div>
