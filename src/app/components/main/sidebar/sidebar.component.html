@@ -1,12 +1,5 @@
 <div class="sidebar">
-  <form (submit)="onSubmit()">
-    <input
-      type="text"
-      placeholder="Search Building"
-      [(ngModel)]="searchBox"
-      name="searchBox"
-    />
-  </form>
+  <input type="text" placeholder="Search Building" (keyup)="onSearch($event)" />
 
   <ul *ngIf="buildingList">
     <li

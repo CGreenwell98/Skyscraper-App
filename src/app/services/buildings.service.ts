@@ -26,6 +26,10 @@ export class BuildingsService {
   searchBuildings(query: string): Observable<Building[]> {
     return this.http
       .get<Building[]>(this.apiUrl)
-      .pipe(map((items) => items.filter((item) => item.name.includes(query))));
+      .pipe(
+        map((items) =>
+          items.filter((item) => item.name.toLowerCase().includes(query))
+        )
+      );
   }
 }

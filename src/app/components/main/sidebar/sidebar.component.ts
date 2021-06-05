@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
+import { debounceTime } from 'rxjs/operators';
 import { Building } from 'src/app/models/Building';
 import { BuildingsService } from 'src/app/services/buildings.service';
 import { UiService } from 'src/app/services/ui.service';
@@ -12,7 +13,6 @@ import { UiService } from 'src/app/services/ui.service';
 export class SidebarComponent implements OnInit {
   buildingList: Observable<Building[]> = this.buildingsService.getBuildings();
   curBuilding: Observable<Building> = this.uiService.curBuilding();
-  searchBox: string = '';
 
   constructor(
     private buildingsService: BuildingsService,
@@ -30,8 +30,12 @@ export class SidebarComponent implements OnInit {
     this.uiService.setAddBuildingState(true);
   }
 
-  onSubmit() {
-    this.buildingList = this.buildingsService.searchBuildings(this.searchBox);
-    this.searchBox = '';
+  onSearch($event: any) {
+    of($event.target.value)
+      .pipe(debounceTime(1000))
+      .subscribe(
+        (text) =>
+          (this.buildingList = this.buildingsService.searchBuildings(text))
+      );
   }
 }
