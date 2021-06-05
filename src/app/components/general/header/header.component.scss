@@ -5,14 +5,20 @@
   height: 40px;
   background-color: snow;
 
+  h2 {
+    font-family: "Odibee Sans", cursive;
+    letter-spacing: 0.1em;
+  }
+
   nav {
     a {
       padding: 0 10px;
       text-decoration: none;
       color: black;
+      height: 40px;
 
       &:hover {
-        background-color: grey;
+        color: #4b4a4a;
       }
     }
   }

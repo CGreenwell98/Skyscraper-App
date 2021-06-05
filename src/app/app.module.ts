@@ -8,6 +8,9 @@ import { MainpageComponent } from './components/main/mainpage/mainpage.component
 import { HeaderComponent } from './components/general/header/header.component';
 import { SidebarComponent } from './components/main/sidebar/sidebar.component';
 import { BuildingInfoComponent } from './components/main/building-info/building-info.component';
+import { AddbuttonComponent } from './components/general/addbutton/addbutton.component';
+import { AddBuildingComponent } from './components/main/add-building/add-building.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,8 +19,10 @@ import { BuildingInfoComponent } from './components/main/building-info/building-
     HeaderComponent,
     SidebarComponent,
     BuildingInfoComponent,
+    AddbuttonComponent,
+    AddBuildingComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

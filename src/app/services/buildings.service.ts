@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Building } from '../models/Building';
-import { filter, concatMap } from 'rxjs/operators';
+import { filter, concatMap, map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -21,5 +21,11 @@ export class BuildingsService {
       concatMap((items) => items),
       filter((item) => item.id === id)
     );
+  }
+
+  searchBuildings(query: string): Observable<Building[]> {
+    return this.http
+      .get<Building[]>(this.apiUrl)
+      .pipe(map((items) => items.filter((item) => item.name.includes(query))));
   }
 }

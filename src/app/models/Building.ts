@@ -7,5 +7,6 @@ export interface Building {
   primaryuse: string;
   location: string;
   notes?: string;
+  description: string;
   image: string;
 }

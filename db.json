@@ -81,6 +81,17 @@
       "location": "Canary Wharf",
       "description": "The Newfoundland is a 220-metre (720 ft) residential skyscraper currently under development between Westferry Road and Bank Street on the Isle of Dogs, London. South Quay Properties, Ltd., a subsidiary of Canary Wharf Group, submitted a planning application to Tower Hamlets in June 2013 for the erection of a 58-storey and linked 2-storey building for residential use, along with some retail uses and car parking at a location bounded by Park Place, Westferry Road and Heron Quay Road. The building was designed by architects Horden Cherry Lee and WSP structural engineers, and is scheduled to be open for rent in February 2021.",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/NewfoundlandCanaryWharf.jpg/300px-NewfoundlandCanaryWharf.jpg"
+    },
+    {
+      "id": 8,
+      "name": "South Quay Plaza 1",
+      "height": "215",
+      "floors": "68",
+      "yearbuilt": "2020",
+      "primaryuse": "Residential",
+      "location": "Canary Wharf",
+      "description": "South Quay Plaza is a residential-led development under construction in Canary Wharf on the Isle of Dogs, London, within the borough of Tower Hamlets developed by Berkeley Group Holdings and designed by architect Foster + Partners. The site of the development lies to the immediate north of Marsh Wall and to the immediate south of the financial district Canary Wharf. It is scheduled for completion in 2022. The development includes three towers, of which the tallest, Hampton Tower, will reach a height of 214.5 m (704 ft); making it the second-tallest residential skyscraper currently proposed for London. There will also be new public and retail space, cafés and restaurants as part of the scheme.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/SouthQuayPlazaCanaryWharf.jpg/360px-SouthQuayPlazaCanaryWharf.jpg"
     }
   ]
 }

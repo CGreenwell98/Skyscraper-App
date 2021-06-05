@@ -5,6 +5,12 @@
   padding: 20px;
   background-color: snow;
   border-radius: 10px;
+  position: relative;
+
+  .add-btn {
+    position: absolute;
+    bottom: 10px;
+  }
 
   input {
     width: 180px;
@@ -35,4 +41,8 @@
       }
     }
   }
+}
+
+.active {
+  background-color: #e0e0e0;
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Building } from 'src/app/models/Building';
-import { BuildingsService } from '../../../services/buildings.service';
+import { UiService } from 'src/app/services/ui.service';
 
 @Component({
   selector: 'app-building-info',
@@ -8,13 +8,11 @@ import { BuildingsService } from '../../../services/buildings.service';
   styleUrls: ['./building-info.component.scss'],
 })
 export class BuildingInfoComponent implements OnInit {
-  building: any = {};
+  building: Building = {} as Building;
 
-  constructor(private buildingService: BuildingsService) {}
-
-  ngOnInit(): void {
-    this.building = this.buildingService
-      .getBuilding(3)
-      .subscribe((building: Building) => (this.building = building));
+  constructor(private uiService: UiService) {
+    this.uiService.curBuilding().subscribe((val) => (this.building = val));
   }
+
+  ngOnInit(): void {}
 }

@@ -1,8 +1,26 @@
 <div class="sidebar">
-  <input type="text" placeholder="Search Building" />
+  <form (submit)="onSubmit()">
+    <input
+      type="text"
+      placeholder="Search Building"
+      [(ngModel)]="searchBox"
+      name="searchBox"
+    />
+  </form>
+
   <ul *ngIf="buildingList">
-    <li *ngFor="let building of buildingList | async">
+    <li
+      *ngFor="let building of buildingList | async"
+      (click)="handleClick(building)"
+      [ngClass]="building === (curBuilding | async) ? 'active' : ''"
+    >
       {{ building.name }}
     </li>
   </ul>
+  <app-addbutton
+    class="add-btn"
+    text="Add Building"
+    width="190"
+    (onClick)="addBtnClick()"
+  ></app-addbutton>
 </div>

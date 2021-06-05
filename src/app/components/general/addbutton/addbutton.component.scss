@@ -1,0 +1,22 @@
+.add-button {
+  font-size: 0.7em;
+  padding: 3px;
+  border-radius: 3px;
+  background-color: lightgreen;
+  color: darkgreen;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5px;
+  transition: all 0.1s ease-in;
+
+  &:hover {
+    cursor: pointer;
+    background-color: #4ee44e;
+  }
+
+  strong {
+    font-size: 1.4em;
+    margin: 0 5px;
+  }
+}
