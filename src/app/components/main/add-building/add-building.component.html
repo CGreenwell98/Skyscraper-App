@@ -1,6 +1,55 @@
 <div class="add-building-container">
-  <div class="form-control">
-    <label for="text">Task</label>
-    <input type="text" name="text" id="text" placeholder="Add Task" />
-  </div>
+  <form [formGroup]="rForm" (ngSubmit)="addBuilding(rForm.value)">
+    <h1>Add a New Building:</h1>
+    <div class="form-container-top">
+      <label for="name"
+        >Name
+        <input type="text" formControlName="name" />
+      </label>
+
+      <label for="height"
+        >Height
+        <input type="text" formControlName="height" />
+      </label>
+
+      <label for="floors"
+        >Floor Count
+        <input type="text" formControlName="floors" />
+      </label>
+
+      <label for="yearbuilt"
+        >Year Built
+        <input type="text" formControlName="yearbuilt" />
+      </label>
+
+      <label for="primaryuse"
+        >Primary Use
+        <input type="text" formControlName="primaryuse" />
+      </label>
+
+      <label for="location"
+        >Location
+        <input type="text" formControlName="location" />
+      </label>
+
+      <label for="image" class="image-address"
+        >Image Address
+        <input type="text" formControlName="image" />
+      </label>
+    </div>
+    <div class="form-container-bottom">
+      <label for="description"
+        >Description (optional)
+        <textarea type="text" rows="6" formControlName="description"></textarea>
+        <p>{{ rForm.value.description.length }}/300</p>
+      </label>
+
+      <input
+        type="submit"
+        class="submit-btn"
+        value="Add New Building"
+        [disabled]="!rForm.valid"
+      />
+    </div>
+  </form>
 </div>

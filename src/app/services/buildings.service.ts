@@ -1,8 +1,14 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Building } from '../models/Building';
 import { filter, concatMap, map } from 'rxjs/operators';
+
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json',
+  }),
+};
 
 @Injectable({
   providedIn: 'root',
@@ -23,7 +29,7 @@ export class BuildingsService {
     );
   }
 
-  searchBuildings(query: string): Observable<Building[]> {
+  searchBuildings(query: any): Observable<Building[]> {
     return this.http
       .get<Building[]>(this.apiUrl)
       .pipe(
@@ -31,5 +37,9 @@ export class BuildingsService {
           items.filter((item) => item.name.toLowerCase().includes(query))
         )
       );
+  }
+
+  addBuilding(building: Building): Observable<Building> {
+    return this.http.post<Building>(this.apiUrl, building, httpOptions);
   }
 }

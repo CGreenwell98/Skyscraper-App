@@ -1,5 +1,5 @@
 export interface Building {
-  id: number;
+  id?: number;
   name: string;
   height: string;
   floors: string;
@@ -7,6 +7,6 @@ export interface Building {
   primaryuse: string;
   location: string;
   notes?: string;
-  description: string;
+  description?: string;
   image: string;
 }

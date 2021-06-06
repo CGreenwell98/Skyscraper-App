@@ -10,7 +10,7 @@ import { SidebarComponent } from './components/main/sidebar/sidebar.component';
 import { BuildingInfoComponent } from './components/main/building-info/building-info.component';
 import { AddbuttonComponent } from './components/general/addbutton/addbutton.component';
 import { AddBuildingComponent } from './components/main/add-building/add-building.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +22,13 @@ import { FormsModule } from '@angular/forms';
     AddbuttonComponent,
     AddBuildingComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
