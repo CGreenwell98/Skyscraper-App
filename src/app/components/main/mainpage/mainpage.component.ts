@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
+import { getShowAddBuilding } from 'src/app/selectors/ui.selector';
 import { UiService } from 'src/app/services/ui.service';
+import { UiState } from '../../../models/UiState';
 
 @Component({
   selector: 'app-mainpage',
@@ -8,9 +11,13 @@ import { UiService } from 'src/app/services/ui.service';
   styleUrls: ['./mainpage.component.scss'],
 })
 export class MainpageComponent implements OnInit {
-  addBuildingVisible: Observable<boolean> = this.uiService.addBuildingState();
+  // showAddBuilding$: Observable<boolean> = this.store.select(getShowAddBuilding);
+  showAddBuilding$: Observable<boolean> = this.uiService.addBuildingState();
 
-  constructor(private uiService: UiService) {}
+  constructor(
+    private store: Store<{ ui: UiState }>,
+    private uiService: UiService
+  ) {}
 
   ngOnInit(): void {}
 }

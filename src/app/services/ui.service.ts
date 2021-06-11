@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, Subject, of } from 'rxjs';
 import { Building } from '../models/Building';
 import { BuildingsService } from './buildings.service';
-import { debounceTime } from 'rxjs/operators';
+import { debounceTime, switchMap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -46,16 +46,22 @@ export class UiService {
 
   searchBuildings(query: any) {
     this.searchQuery = query;
-    this.buildingService.searchBuildings(query).subscribe((list) => {
-      this.buildingList = list;
-      this.buildingListSubject.next(this.buildingList);
-    });
+
+    of(query)
+      .pipe(
+        debounceTime(1000),
+        switchMap(() => this.buildingService.searchBuildings(query))
+      )
+      .subscribe((list) => {
+        this.buildingList = list;
+        this.buildingListSubject.next(this.buildingList);
+      });
   }
 
   addBuilding(building: Building) {
-    this.buildingService.addBuilding(building).subscribe(() => {
+    this.buildingService.addBuilding(building).subscribe((res) => {
       this.searchBuildings(this.searchQuery);
-      this.setCurBuilding(building);
+      this.setCurBuilding(res.Item);
       this.setAddBuildingState(false);
     });
   }

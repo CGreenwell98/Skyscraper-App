@@ -11,6 +11,11 @@ import { BuildingInfoComponent } from './components/main/building-info/building-
 import { AddbuttonComponent } from './components/general/addbutton/addbutton.component';
 import { AddBuildingComponent } from './components/main/add-building/add-building.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { StoreModule } from '@ngrx/store';
+import { uiReducer } from './reducers/ui.reducer';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from 'src/environments/environment';
+import { buildingReducer } from './reducers/building.reducer';
 
 @NgModule({
   declarations: [
@@ -28,6 +33,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    StoreModule.forRoot({ ui: uiReducer, building: buildingReducer }),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25,
+      logOnly: environment.production,
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],

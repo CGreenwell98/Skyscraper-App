@@ -8,7 +8,7 @@
       </label>
 
       <label for="height"
-        >Height
+        >Height (m)
         <input type="text" formControlName="height" />
       </label>
 
@@ -40,8 +40,12 @@
     <div class="form-container-bottom">
       <label for="description"
         >Description (optional)
-        <textarea type="text" rows="6" formControlName="description"></textarea>
-        <p>{{ rForm.value.description.length }}/300</p>
+        <textarea
+          type="text"
+          rows="10"
+          formControlName="description"
+        ></textarea>
+        <p>{{ rForm.value.description.length }}/800</p>
       </label>
 
       <input

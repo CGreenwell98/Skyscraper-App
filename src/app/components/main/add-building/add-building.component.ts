@@ -22,7 +22,7 @@ export class AddBuildingComponent implements OnInit {
       primaryuse: [null, Validators.required],
       location: [null, Validators.required],
       image: [null, Validators.required],
-      description: ['', Validators.maxLength(300)],
+      description: ['', Validators.maxLength(800)],
     });
   }
 
