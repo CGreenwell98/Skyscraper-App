@@ -16,6 +16,7 @@ import { uiReducer } from './reducers/ui.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from 'src/environments/environment';
 import { buildingReducer } from './reducers/building.reducer';
+import { appReducer } from './store/app.state';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,7 @@ import { buildingReducer } from './reducers/building.reducer';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    StoreModule.forRoot({ ui: uiReducer, building: buildingReducer }),
+    StoreModule.forRoot(appReducer),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: environment.production,
