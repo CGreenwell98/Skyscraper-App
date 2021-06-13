@@ -3,8 +3,7 @@ import { UiState } from '../models/UiState';
 
 const getUiState = createFeatureSelector<UiState>('ui');
 
-export const getShowAddBuilding = createSelector(getUiState, (state) => {
-  // console.log(state.showAddBuilding);
-
-  return state.showAddBuilding;
-});
+export const getShowAddBuilding = createSelector(
+  getUiState,
+  (state) => state.showAddBuilding
+);

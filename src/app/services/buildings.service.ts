@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Building } from '../models/Building';
-import { filter, concatMap, map } from 'rxjs/operators';
+import { concatMap, map } from 'rxjs/operators';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -19,7 +19,7 @@ export class BuildingsService {
 
   constructor(private http: HttpClient) {}
 
-  getBuildings(): Observable<any> {
+  getBuildings(): Observable<Building[]> {
     return this.http
       .get<any>(`${this.apiUrl}/all-buildings`)
       .pipe(map((items) => items.Items));
@@ -27,8 +27,7 @@ export class BuildingsService {
 
   // getBuilding(id: number): Observable<Building> {
   //   // return this.http.get<Building[]>(this.apiUrl).pipe(
-  //   //   concatMap((items) => items),
-  //   //   filter((item) => item.id === id)
+  //   //   concatMap((items) => items.Item)
   //   // );
   // }
 

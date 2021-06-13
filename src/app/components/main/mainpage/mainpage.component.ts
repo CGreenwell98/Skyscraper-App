@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
+import { getBuildings } from 'src/app/actions/building.actions';
 import { Appstate } from 'src/app/models/AppState';
 import { getShowAddBuilding } from 'src/app/selectors/ui.selector';
 import { UiService } from 'src/app/services/ui.service';
@@ -16,5 +17,7 @@ export class MainpageComponent implements OnInit {
 
   constructor(private store: Store<Appstate>, private uiService: UiService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.store.dispatch(getBuildings());
+  }
 }

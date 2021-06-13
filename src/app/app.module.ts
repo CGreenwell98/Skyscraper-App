@@ -12,11 +12,11 @@ import { AddbuttonComponent } from './components/general/addbutton/addbutton.com
 import { AddBuildingComponent } from './components/main/add-building/add-building.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
-import { uiReducer } from './reducers/ui.reducer';
+import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from 'src/environments/environment';
-import { buildingReducer } from './reducers/building.reducer';
 import { appReducer } from './store/app.state';
+import { BuildingEffects } from './effects/building.effects';
 
 @NgModule({
   declarations: [
@@ -34,6 +34,7 @@ import { appReducer } from './store/app.state';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    EffectsModule.forRoot([BuildingEffects]),
     StoreModule.forRoot(appReducer),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
