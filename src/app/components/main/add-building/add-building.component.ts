@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Store } from '@ngrx/store';
+import { postBuilding } from 'src/app/actions/building.actions';
+import { setShowAddBuilding } from 'src/app/actions/ui.actions';
+import { Appstate } from 'src/app/models/AppState';
 import { Building } from 'src/app/models/Building';
 import { UiService } from 'src/app/services/ui.service';
 
@@ -13,7 +17,11 @@ export class AddBuildingComponent implements OnInit {
   post: any;
   description: string = '';
 
-  constructor(private fb: FormBuilder, private uiService: UiService) {
+  constructor(
+    private fb: FormBuilder,
+    private uiService: UiService,
+    private store: Store<Appstate>
+  ) {
     this.rForm = fb.group({
       name: [null, Validators.required],
       height: [null, Validators.required],
@@ -29,6 +37,7 @@ export class AddBuildingComponent implements OnInit {
   ngOnInit(): void {}
 
   addBuilding(building: Building) {
-    this.uiService.addBuilding(building);
+    // this.uiService.addBuilding(building);
+    this.store.dispatch(postBuilding({ newBuilding: building }));
   }
 }

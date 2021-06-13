@@ -1,5 +1,5 @@
 import { createReducer, on } from '@ngrx/store';
-import { addBuildings, setCurBuilding } from '../actions/building.actions';
+import { setBuildingList, setCurBuilding } from '../actions/building.actions';
 import { Building } from '../models/Building';
 import { BuildingState } from '../models/BuildingState';
 
@@ -10,7 +10,7 @@ export const initialBuildingState: BuildingState = {
 
 export const buildingReducer = createReducer(
   initialBuildingState,
-  on(addBuildings, (state, action) => {
+  on(setBuildingList, (state, action) => {
     return {
       curBuilding: action.payload[0],
       buildingList: action.payload,

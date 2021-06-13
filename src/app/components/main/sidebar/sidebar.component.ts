@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { setCurBuilding } from 'src/app/actions/building.actions';
+import {
+  searchBuildings,
+  setCurBuilding,
+} from 'src/app/actions/building.actions';
 import { setShowAddBuilding } from 'src/app/actions/ui.actions';
 import { Appstate } from 'src/app/models/AppState';
 import { Building } from 'src/app/models/Building';
@@ -31,9 +34,11 @@ export class SidebarComponent implements OnInit {
   addBtnClick() {
     // this.uiService.setAddBuildingState(true);
     this.store.dispatch(setShowAddBuilding({ show: true }));
+    this.store.dispatch(setCurBuilding({ building: {} as Building }));
   }
 
   onSearch($event: any) {
-    this.uiService.searchBuildings($event.target.value);
+    // this.uiService.searchBuildings($event.target.value);
+    this.store.dispatch(searchBuildings({ searchQuery: $event.target.value }));
   }
 }
