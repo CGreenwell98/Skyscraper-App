@@ -1,17 +1,22 @@
 <div class="building-container">
-  <img src="{{ building.image }}" alt="building.img" />
-  <div class="info-container">
-    <h1>{{ building.name }}</h1>
+  <app-loading-spinner
+    *ngIf="!building.name; else building_content"
+  ></app-loading-spinner>
+  <ng-template #building_content>
+    <img src="{{ building.image }}" alt="building.img" />
+    <div class="info-container">
+      <h1>{{ building.name }}</h1>
 
-    <ul>
-      <li><strong>Height:</strong>{{ building.height }}m</li>
-      <li><strong>Floors:</strong>{{ building.floors }}</li>
-      <li><Strong>Primary Use:</Strong>{{ building.primaryuse }}</li>
-      <li><Strong>Year Built:</Strong>{{ building.yearbuilt }}</li>
-      <li><Strong>Location:</Strong>{{ building.location }}</li>
-    </ul>
+      <ul>
+        <li><strong>Height:</strong>{{ building.height }}m</li>
+        <li><strong>Floors:</strong>{{ building.floors }}</li>
+        <li><Strong>Primary Use:</Strong>{{ building.primaryuse }}</li>
+        <li><Strong>Year Built:</Strong>{{ building.yearbuilt }}</li>
+        <li><Strong>Location:</Strong>{{ building.location }}</li>
+      </ul>
 
-    <h3 *ngIf="building.description">Description:</h3>
-    <p>{{ building.description }}</p>
-  </div>
+      <h3 *ngIf="building.description">Description:</h3>
+      <p>{{ building.description }}</p>
+    </div>
+  </ng-template>
 </div>

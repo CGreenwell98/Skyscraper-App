@@ -65,9 +65,9 @@ export class BuildingEffects {
         this.buildingService.addBuilding(action.newBuilding)
       ),
       concatMap((building) => [
-        searchBuildings({ searchQuery: this.searchQuery }),
         setCurBuilding({ building }),
         setShowAddBuilding({ show: false }),
+        searchBuildings({ searchQuery: this.searchQuery }),
       ])
     );
   });

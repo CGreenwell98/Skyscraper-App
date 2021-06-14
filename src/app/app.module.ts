@@ -17,6 +17,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from 'src/environments/environment';
 import { appReducer } from './store/app.state';
 import { BuildingEffects } from './effects/building.effects';
+import { LoadingSpinnerComponent } from './components/general/loading-spinner/loading-spinner.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { BuildingEffects } from './effects/building.effects';
     BuildingInfoComponent,
     AddbuttonComponent,
     AddBuildingComponent,
+    LoadingSpinnerComponent,
   ],
   imports: [
     BrowserModule,
