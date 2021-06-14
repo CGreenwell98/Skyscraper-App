@@ -26,7 +26,7 @@ export class BuildingsService {
   }
 
   // getBuilding(id: number): Observable<Building> {
-  //   // return this.http.get<Building[]>(this.apiUrl).pipe(
+  //   // return this.http.get<Building[]>(`{this.apiUrl}/building`).pipe(
   //   //   concatMap((items) => items.Item)
   //   // );
   // }

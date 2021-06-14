@@ -3,7 +3,6 @@ import { Store } from '@ngrx/store';
 import { Appstate } from 'src/app/models/AppState';
 import { Building } from 'src/app/models/Building';
 import { curBuilding } from 'src/app/selectors/building.selector';
-import { UiService } from 'src/app/services/ui.service';
 
 @Component({
   selector: 'app-building-info',
@@ -13,8 +12,7 @@ import { UiService } from 'src/app/services/ui.service';
 export class BuildingInfoComponent implements OnInit {
   building: Building = {} as Building;
 
-  constructor(private uiService: UiService, private store: Store<Appstate>) {
-    // this.uiService.curBuilding().subscribe((val) => (this.building = val));
+  constructor(private store: Store<Appstate>) {
     this.store.select(curBuilding).subscribe((val) => (this.building = val));
   }
 

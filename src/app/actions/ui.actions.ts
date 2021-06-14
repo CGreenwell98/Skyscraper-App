@@ -4,3 +4,8 @@ export const setShowAddBuilding = createAction(
   'setShowAddBuilding',
   props<{ show: boolean }>()
 );
+
+export const setSearchQuery = createAction(
+  'set query string',
+  props<{ query: string }>()
+);

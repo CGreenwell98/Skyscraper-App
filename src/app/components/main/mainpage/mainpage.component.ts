@@ -4,7 +4,6 @@ import { Observable } from 'rxjs';
 import { getBuildings } from 'src/app/actions/building.actions';
 import { Appstate } from 'src/app/models/AppState';
 import { getShowAddBuilding } from 'src/app/selectors/ui.selector';
-import { UiService } from 'src/app/services/ui.service';
 
 @Component({
   selector: 'app-mainpage',
@@ -13,9 +12,8 @@ import { UiService } from 'src/app/services/ui.service';
 })
 export class MainpageComponent implements OnInit {
   showAddBuilding$: Observable<boolean> = this.store.select(getShowAddBuilding);
-  // showAddBuilding$: Observable<boolean> = this.uiService.addBuildingState();
 
-  constructor(private store: Store<Appstate>, private uiService: UiService) {}
+  constructor(private store: Store<Appstate>) {}
 
   ngOnInit(): void {
     this.store.dispatch(getBuildings());

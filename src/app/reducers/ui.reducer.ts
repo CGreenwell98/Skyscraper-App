@@ -1,9 +1,10 @@
 import { createReducer, on } from '@ngrx/store';
-import { setShowAddBuilding } from '../actions/ui.actions';
+import { setSearchQuery, setShowAddBuilding } from '../actions/ui.actions';
 import { UiState } from '../models/UiState';
 
 export const initialUiState: UiState = {
   showAddBuilding: false,
+  searchQuery: '',
 };
 
 export const uiReducer = createReducer(
@@ -12,6 +13,12 @@ export const uiReducer = createReducer(
     return {
       ...state,
       showAddBuilding: action.show,
+    };
+  }),
+  on(setSearchQuery, (state, action) => {
+    return {
+      ...state,
+      searchQuery: action.query,
     };
   })
 );

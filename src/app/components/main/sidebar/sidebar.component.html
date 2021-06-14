@@ -4,7 +4,7 @@
   <ul *ngIf="buildingList">
     <li
       *ngFor="let building of buildingList | async"
-      (click)="handleClick(building)"
+      (click)="handleListClick(building)"
       [ngClass]="building === (curBuilding | async) ? 'active' : ''"
     >
       {{ building.name }}

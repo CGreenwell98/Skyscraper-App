@@ -7,3 +7,8 @@ export const getShowAddBuilding = createSelector(
   getUiState,
   (state) => state.showAddBuilding
 );
+
+export const getSearchQuery = createSelector(
+  getUiState,
+  (state) => state.searchQuery
+);
