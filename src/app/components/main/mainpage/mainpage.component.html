@@ -1,5 +1,6 @@
 <div class="mainpage">
   <app-sidebar></app-sidebar>
-  <app-building-info *ngIf="!(showAddBuilding$ | async)"></app-building-info>
-  <app-add-building *ngIf="showAddBuilding$ | async"></app-add-building>
+  <router-outlet></router-outlet>
+  <!-- <app-building-info *ngIf="!(showAddBuilding$ | async)"></app-building-info>
+  <app-add-building *ngIf="showAddBuilding$ | async"></app-add-building> -->
 </div>

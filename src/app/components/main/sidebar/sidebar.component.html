@@ -6,6 +6,7 @@
       *ngFor="let building of buildingList | async"
       (click)="handleListClick(building)"
       [ngClass]="building === (curBuilding | async) ? 'active' : ''"
+      routerLink="./"
     >
       {{ building.name }}
     </li>
@@ -15,5 +16,6 @@
     text="Add Building"
     width="190"
     (onClick)="addBtnClick()"
+    routerLink="add-building"
   ></app-addbutton>
 </div>

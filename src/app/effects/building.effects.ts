@@ -66,7 +66,7 @@ export class BuildingEffects {
       ),
       concatMap((building) => [
         setCurBuilding({ building }),
-        setShowAddBuilding({ show: false }),
+        // setShowAddBuilding({ show: false }),
         searchBuildings({ searchQuery: this.searchQuery }),
       ])
     );

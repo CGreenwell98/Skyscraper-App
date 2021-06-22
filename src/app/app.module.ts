@@ -18,6 +18,8 @@ import { environment } from 'src/environments/environment';
 import { appReducer } from './store/app.state';
 import { BuildingEffects } from './effects/building.effects';
 import { LoadingSpinnerComponent } from './components/general/loading-spinner/loading-spinner.component';
+import { HomepageComponent } from './components/home/homepage/homepage.component';
+import { SignInPageComponent } from './components/sign-in/sign-in-page/sign-in-page.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { LoadingSpinnerComponent } from './components/general/loading-spinner/lo
     AddbuttonComponent,
     AddBuildingComponent,
     LoadingSpinnerComponent,
+    HomepageComponent,
+    SignInPageComponent,
   ],
   imports: [
     BrowserModule,

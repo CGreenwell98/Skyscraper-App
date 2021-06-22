@@ -25,11 +25,11 @@ export class SidebarComponent implements OnInit {
 
   handleListClick(building: Building) {
     this.store.dispatch(setCurBuilding({ building }));
-    this.store.dispatch(setShowAddBuilding({ show: false }));
+    // this.store.dispatch(setShowAddBuilding({ show: false }));
   }
 
   addBtnClick() {
-    this.store.dispatch(setShowAddBuilding({ show: true }));
+    // this.store.dispatch(setShowAddBuilding({ show: true }));
     this.store.dispatch(setCurBuilding({ building: {} as Building }));
   }
 
